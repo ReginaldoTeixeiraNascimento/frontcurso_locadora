@@ -1,14 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { Route } from 'react-router-dom';
-import history from './history';
-import Router from './routes';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-
-
-
-
+root.render(
+  <React.StrictMode>
+    <App /> {/* Apenas renderiza o App sem BrowserRouter */}
+  </React.StrictMode>
+);
