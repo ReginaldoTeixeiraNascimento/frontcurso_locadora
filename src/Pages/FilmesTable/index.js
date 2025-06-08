@@ -1,21 +1,23 @@
 import React from "react";
 
 function FilmesTable(props) {
-  const rows = props.filmes.map((filme) => {
+  const rows = props.filmes.map((filme) => { //faz a leitura dos registros de filme
     return (
       <tr key={filme.id}>
         <td className="text-center">{filme.nome}</td>
         <td className="text-center">{filme.genero}</td>
         <td className="text-center">
           <div className="btn-group" role="group">
+            
             <button
               className="btn btn-success mx-1"
               title="Alugar Filme"
-              onClick={() => props.alugaFilme(filme.id)}
+              onClick={() => props.alugaFilme(filme.id)}//passa para o sistema quando o usuário clicar no botao qual foi o botão que clicou no caso da locação
               type="button"
             >
               <i className="pi pi-check"></i>
             </button>
+
             <button
               className="btn btn-info mx-1"
               title="Ver Detalhes"
@@ -24,6 +26,7 @@ function FilmesTable(props) {
             >
               <i className="pi pi-info-circle"></i>
             </button>
+
             <button
               className="btn btn-warning mx-1"
               title="Ver Valor do Aluguel"

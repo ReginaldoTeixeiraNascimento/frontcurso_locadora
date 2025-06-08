@@ -8,7 +8,7 @@ import toastr from 'toastr';
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [user, setUser] = useState('');
+  const [, setUser] = useState('');  //tirei o user antes da virula pois não estava usando
 
   const navigate = useNavigate();
 
@@ -21,14 +21,14 @@ function Login() {
     api
       .post("/clientes/login", {
         email: email,
-        senha: senha,
+        telefone: senha,
       })
       .then((response) => {
         setUser(response.data);
         const userId = response.data.id;
         const prodUser = response.data;
 
-        localStorage.setItem("userId", userId);
+        localStorage.setItem("userId", userId); // aqui armazeno as variaveis que fizeram o login e utilizo elas no sistema no localstorange
         localStorage.setItem("prodUser", JSON.stringify(prodUser));
 
         toastr.success("Login realizado com sucesso!");

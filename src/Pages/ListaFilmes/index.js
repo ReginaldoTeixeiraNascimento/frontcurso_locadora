@@ -14,7 +14,7 @@ function ListaFilmes() {
   const alugaFilme = (id) => {
     console.log('Aluga Filme');
 
-    const idCliente = JSON.parse(localStorage.getItem("userId"));
+    const idCliente = JSON.parse(localStorage.getItem("userId")); //Recupera o registro que foi criado na tela de login, ele traz o id do usuário
     console.log(idCliente);
 
     const cliente = { id: idCliente };
@@ -22,7 +22,7 @@ function ListaFilmes() {
     api
       .post("/locacoes", {
         cliente,
-        filme: { id },
+        filme: { id }, //esse valor vem de ListaFilmes() que foi criado em FilmesTable
         data: "11/05/2025",
         valor: "R$ 10,00",
       })
